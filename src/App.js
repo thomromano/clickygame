@@ -7,7 +7,7 @@ import "./App.css";
 
 let correctGuesses = 0;
 let bestScore = 0;
-let clickMessage = "Click on an image to earn points, but don't click on any of them more than once!";
+let clickMessage = "Can you assemble all twelve heroes?";
 
 class App extends Component {
     
@@ -34,7 +34,7 @@ class App extends Component {
             console.log ("Best Score: " + bestScore);
 
             correctGuesses = 0;
-            clickMessage = "Dang! You already clicked on that one! Now you have to start over!"
+            clickMessage = "Nope!"
 
             for (let i = 0 ; i < matches.length ; i++){
                 matches[i].clicked = false;
@@ -51,7 +51,7 @@ class App extends Component {
 
             correctGuesses++;
             
-            clickMessage = "Great! You haven't click on that one yet! Keep going!";
+            clickMessage = "YEESSS!";
 
             if (correctGuesses > bestScore){
                 bestScore = correctGuesses;
@@ -72,7 +72,7 @@ class App extends Component {
             correctGuesses = 0;
 
   
-            clickMessage = "Great Memory!";
+            clickMessage = "MARVEL-OUS!";
             bestScore = 12;
             this.setState({ bestScore });
             
@@ -93,7 +93,7 @@ class App extends Component {
     render() {
         return (
             <Wrapper>
-                <Title>To boldly click where no one has clicked before!</Title>
+                <Title>Assemble the team!</Title>
         
                 <h3 className="scoreSummary">
                     {this.state.clickMessage}
